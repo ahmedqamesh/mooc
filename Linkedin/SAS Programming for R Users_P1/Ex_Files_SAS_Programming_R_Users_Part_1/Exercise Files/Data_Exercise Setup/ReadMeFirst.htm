@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en"><!-- InstanceBegin template="/Templates/concept_rc.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<style>
+strong{font-weight:bold;} td{font-size:100%} pre{margin:0;} p{font-size:.9em;} code{font-size:1.0em;} .indent20{ margin-left:20px; margin-right:20px;}li{font-size: .9em} 
+</style>
+<script>
+</script>
+<title>TopicTitle</title>
+<!-- InstanceBeginEditable name="head" -->
+	<style>.colorback{background-color: #d8e4eb; padding:4px;} #toggleText{border:1px solid #d8e4eb;} .bigly{font-size:1.0em;}</style>
+<script>
+function togMore() {
+   var ele = document.getElementById("toggleText");
+   var text = document.getElementById("displayText");
+     if(ele.style.display == "block") {
+        ele.style.display = "none";
+        text.innerHTML = "show troubleshooting tips";
+     }
+     else {
+        ele.style.display = "block";
+        text.innerHTML = "hide troubleshooting tips";
+     }
+} 
+	</script>
+
+
+<!-- InstanceEndEditable -->
+
+</head>
+<body bgcolor="#FFFFFF">
+<div id="printthis" class="indent20">
+
+ <!-- InstanceBeginEditable name="Toptitle" --> <h1 class="poph1">Setting Up  Data for This Course</h1><!-- InstanceEndEditable -->
+ 
+  <hr color="#d8e4eb" size="1" width="95%" align="left">
+
+<!-- InstanceBeginEditable name="content" -->
+
+<p>These instructions are primarily for the download version of SAS University Edition, with notes for users accessing the AWS version. <br>
+
+  <br>
+<strong>IMPORTANT:</strong> You must perform  tasks 2 and 3 in the <strong>same</strong> SAS Studio session. Don't close your browser until you've completed both tasks or you will need to start again.</p>
+<p><strong>Note:</strong><br>
+  Some demonstrations in Course Four: The Interactive Matrix Language and Open Source Integration show examples of integrating R with SAS. Integration with R requires an installed version of R, plus a few additional configuration settings within your SAS environment. Because you cannot modify its configuration, SAS University Edition does not support integration with R. For this course, you can learn by watching the demonstrations.</p>
+<div class="subtopic indent15">
+<h2 class="poph2 colorback">Task 1: Download the course files.</h2>
+<ol>
+  <li>Open the <strong>SP4R_Data.zip</strong> file.  This file contains SAS programs and text files for this course.<br>
+    <br>
+  </li>
+  <li>On your computer, locate and open the <strong>SASUniversityEdition</strong> folder, and then open the <strong>myfolders </strong>folder. Create a new folder named <strong>sp4r</strong>.<br> 
+    <strong>Note</strong>: If you don't have a <strong>myfolders</strong> folder, go back to the <a href="https://www.sas.com/en_us/software/university-edition/download-software.html#modal1" target="_blank">SAS University Edition Quick Start Guide</a> and follow the instructions to set  it up before you continue.<br>
+    <br>
+  <li>Extract the contents of the zip file to the <strong>sp4r</strong> folder.</li>
+</ol>
+    <p><strong>For SAS University Edition on AWS</strong>:</p>
+  <ol>
+    <li>Open the <strong>SP4R_Data.zip</strong> file.  and extract its contents to a local folder. This file contains SAS programs and text files for this course.</li>
+    <li>Log into SAS University Edition on AWS.</li>
+    <li>In the <strong>Server Files and Folders</strong> pane, click <strong>New</strong> and select <strong>Folder</strong>. Create a  folder named <strong>sp4r</strong>. </li>
+    <li>Expand <strong>My Folders</strong> and select <strong>sp4r</strong>. </li>
+    <li>Click <strong>Upload</strong> and then click <strong>Choose Files</strong>. Navigate to the location where you stored the contents of the  zip file, select all the files, and  upload them to the <strong>sp4r</strong> folder.</li>
+  </ol>
+
+<h2 class="poph2 colorback">Task 2: Define the sp4r library.</h2>
+  
+  <ol>
+    <li>Start SAS Studio from your SAS University Edition: Information Center.<br>
+      <br>
+    </li>
+    <li>In  the <strong>Server Files and</strong> <strong>Folders</strong> pane, click <strong>New</strong> <img class='vleImage'  src="../../Course 1/01/rc_common/studio_newtool.png" width="19" height="17" alt="New"> and select <strong>SAS Program</strong>. <br>
+      <br>
+    </li>
+    
+    <li>The following code creates a macro variable to store the location of your course data and defines the <strong>sp4r</strong> library. Copy and paste the following two lines of code into the <strong>Code</strong> tab in SAS Studio.<br>
+      <br>
+      <pre>%let path=/folders/myfolders/sp4r; 
+libname sp4r "&amp;path";
+      </pre></li>
+    <li>Click <strong>Run </strong> <img class='vleImage' src="../../Course 1/01/rc_common/studio_runtool.png" width="24" height="22" alt="Submit tool">  to submit this program to SAS. 
+        <br>
+        <br>
+</li>
+<li>Check the log  to make sure that the libref <strong>sp4r</strong> was successfully assigned. You should see this message in the log:<br>
+    <br>
+  
+  <pre>NOTE: Libref SP4R was successfully assigned </pre><br>
+
+<a id="displayText" href="javascript:togMore();">Show troubleshooting tips</a>
+ 
+<div id="toggleText" style="display: none"><p style="font-size:1.0em;"><blockquote>
+If the program does not run successfully, check the path to the <strong>sp4r</strong> folder:<ul><li class="bigly"> In the <strong>Server Files and Folders</strong> pane, open <strong>My Folders</strong>. </li><li class="bigly">Right-click <strong>sp4r</strong> and select <strong>Properties</strong>. Verify that the location is /folders/myfolders/sp4r.</li><li class="bigly"> If the path is different, copy the path shown in <strong>Location</strong> and replace the filepath shown in line 1 of the code.</li><li class="bigly"> Run the code again.</li></ul><br>
+
+ If the program still does not run, go back to the SAS University Edition setup instructions and make sure you created the <strong>myfolders</strong> subfolder and defined it as a shared folder in your virtualization software. </blockquote></p></div> 
+  
+<br>
+<br>
+
+
+
+  <li>Click the <strong>Code</strong> tab and click <strong>Save</strong> <img class='vleImage'  src="../../Course 1/01/rc_common/studio_savetool.png" width="15" height="15" alt="Save tool">. In the Save As window, open the <strong>sp4r</strong>  folder. Name the program <strong>setup.sas </strong> and click <strong>Save</strong>.<br>
+    <br>
+  <strong>Optional</strong>: If you prefer, you can add this code to the <strong>Snippets</strong> panel. To do this, click <strong>Add to My Snippets </strong><img class='vleImage' src="../../Course 1/01/rc_common/studio_snippet_tool.png" width="16" height="15" alt="Add to My Snippets tool"> and type <strong>setup</strong> in the <strong>Name</strong> field. To run the program, press <strong>F4</strong> to open a new program tab, open the <strong>Snippets</strong> panel, open <strong>My Snippets</strong>, and double-click <strong>setup</strong>. Then, run the code. <br>
+    <br>
+  
+  <li>Close the <strong>setup.sas</strong> program tab in the workspace. </ol><p>
+  <strong>IMPORTANT</strong>: Each time you start SAS Studio, you must open the <strong>setup.sas</strong> program and run it to define the <strong>sp4r</strong> library so that you have access to your course data.</p>
+
+  <h2 class="poph2 colorback">Task 3: Create the SAS data sets for the course &#8212; you only have to do this once.</h2>
+  
+  <ol>
+    <li>In the <strong>Server</strong> <strong>Files and Folders</strong> pane, open <strong>My Folders</strong> and then open the <strong>spr4</strong> folder.<br>
+      <br>
+    </li>
+	  <li>Double-click <strong>create_data.sas</strong> to open it.<br>
+      <br>
+    </li>
+    <li>Click  <strong>Run</strong><img class='vleImage'  src="../../Course 1/01/rc_common/studio_runtool.png" width="24" height="22" alt="Submit tool"></strong> to submit the program to SAS. This program creates SAS data sets in the <strong>sp4r</strong> folder. <br>
+      <br>
+    <li>After the code runs, the <strong>Results</strong> tab displays two tables. The second table lists the data sets that the program created. Check the log to verify that there are no errors or warnings. There will be many notes because SAS writes a note for each data set that the program creates.<br>
+      <br>
+      <strong>NOTE:</strong> If your program does not run successfully, make sure you completed all the steps in <strong>Task 2</strong> correctly.
+      <br>
+      <br>
+    <li>Close the <strong>create_data.sas</strong> program tab in the workspace. <br>
+      <br>
+      <strong>NOTE</strong>: Unless you delete your <strong>sp4r</strong> folder, you do not need to perform this task again.<br>
+     
+  </ol>
+  
+
+  <p><strong>For SAS University Edition on AWS</strong>:</p>
+  <ul>
+    <li>When you <strong>stop</strong> an instance of SAS University Edition (or if the instance<strong> times out</strong>), the course data persists. When you start the instance again, you need to open and submit the <strong>setup.sas</strong> program to define the <STRONG>sp4r</STRONG> library.</li>
+    <li>When  you <strong>terminate</strong> an instance of SAS University Edition, the course data is deleted along with the instance. You must  perform <strong>Task 2</strong> and <strong>Task 3</strong> when you create a new instance.</li>
+    <li>To ensure the latest version for the best functionality throughout this course, after SAS is installed and running virtually, we suggest running an update from the &quot;SAS® University Edition: Information Center&quot; window. A search for updates can be scanned in the bottom left of this page under Notifications, where you will be taken through a step-by-step process.</li>
+  </ul>
+  
+</div>
+<!-- InstanceEndEditable -->
+  
+ 
+  <br>
+</div> 
+<hr color="#d8e4eb" size="1" width="95%">
+
+<center><button class="niceButton" onClick="Javascript: openOther('rc_common/rc_printversion.htm');">Print This Page</button></center>
+<br>
+<script>changeVLEimages();</script>
+</body>
+<!-- InstanceEnd --></html>
